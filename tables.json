@@ -1,0 +1,117 @@
+{
+  "Enugu": {
+    "table_name": "transactions",
+    "columns": {
+      "TransactionID": "transaction_id",
+      "TransactionStartDateTime": "start_time",
+      "TransactionEndDateTime": "end_time",
+      "CardholderID": "cardholder_id",
+      "LocationID": "location_id",
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionAmount": "amount"
+    }
+  },
+  "Fct": {
+    "table_name": "transactions",
+    "columns": {
+      "TransactionID": "transaction_id",
+      "TransactionStartDateTime": "start_time",
+      "TransactionEndDateTime": "end_time",
+      "CardholderID": "cardholder_id",
+      "LocationID": "location_id",
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionAmount": "amount"
+    }
+  },
+  "Kano": {
+    "table_name": "transactions",
+    "columns": {
+      "TransactionID": "transaction_id",
+      "TransactionStartDateTime": "start_time",
+      "TransactionEndDateTime": "end_time",
+      "CardholderID": "cardholder_id",
+      "LocationID": "location_id",
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionAmount": "amount"
+    }
+  },
+  "Lagos": {
+    "table_name": "transactions",
+    "columns": {
+      "TransactionID": "transaction_id",
+      "TransactionStartDateTime": "start_time",
+      "TransactionEndDateTime": "end_time",
+      "CardholderID": "cardholder_id",
+      "LocationID": "location_id",
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionAmount": "amount"
+    }
+  },
+  "Rivers": {
+    "table_name": "transactions",
+    "columns": {
+      "TransactionID": "transaction_id",
+      "TransactionStartDateTime": "start_time",
+      "TransactionEndDateTime": "end_time",
+      "CardholderID": "cardholder_id",
+      "LocationID": "location_id",
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionAmount": "amount"
+    }
+  },
+  "Atm_location": {
+    "table_name": "atm_location",
+    "columns": {
+      "LocationID": "location_id",
+      "Location Name": "location_name",
+      "No of ATMs": "atm_count",
+      "City": "city",
+      "State": "state",
+      "Country": "country"
+    }
+  },
+  "Calendar": {
+    "table_name": "calendar",
+    "columns": {
+      "Date": "date",
+      "Year": "year",
+      "Month Name": "month_name",
+      "Month": "month",
+      "Quarter": "quarter",
+      "Week of Year": "week_of_year",
+      "End of Week": "end_of_week",
+      "Day of Week": "day_of_week",
+      "Day Name": "day_name",
+      "IsHoliday": "is_holiday"
+    }
+  },
+  "Customers": {
+    "table_name": "customers",
+    "columns": {
+      "CardholderID": "cardholder_id",
+      "First Name": "first_name",
+      "Last Name": "last_name",
+      "Gender": "gender",
+      "ATMID": "atm_id",
+      "Birth Date": "birth_date",
+      "Occupation": "occupation",
+      "AccountType": "account_type",
+      "IsWisabi": "is_wisabi"
+    }
+  },
+  "Hour": {
+    "table_name": "hour_lookup",
+    "columns": {
+      "Hour_Key": "hour_key",
+      "Hour_Start_Time": "hour_start",
+      "Hour_End_Time": "hour_end"
+    }
+  },
+  "Transaction_type": {
+    "table_name": "transaction_type",
+    "columns": {
+      "TransactionTypeID": "transaction_type_id",
+      "TransactionTypeName": "transaction_desc"
+    }
+  }
+}
