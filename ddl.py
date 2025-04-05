@@ -71,6 +71,11 @@ def load_all():
             if props['table_name'] == 'transactions':
                 file_name = f"{sheet.lower()}_transactions"
                 region = sheet.capitalize()
+
+                if region in ["Lagos", "Rivers", "Kano"]:
+                    print(f"⛔ пропущен регион: {region}")
+                    continue
+
                 try:
                     df = read_csv(file_name, props['columns'], region)
                     df = df[df['cardholder_id'].isin(valid_cardholders['cardholder_id'])]
