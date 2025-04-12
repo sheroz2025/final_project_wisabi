@@ -1,6 +1,4 @@
 connect.py
-my.db
-*.db
 .ipynb_checkpoints/
 __pycache__
 # Python cache
@@ -30,10 +28,7 @@ Thumbs.db
 # Streamlit secrets (если используешь)
 .streamlit/secrets.toml
 
-# Database files
-*.db
-*.sqlite3
-my.db
+
 
 # Logs
 *.log
