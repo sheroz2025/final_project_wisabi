@@ -1,4 +1,5 @@
 connect.py
 my.db
-source/lagos_transactions.csv
-__pycache
+*.db
+.ipynb_checkpoints/
+
