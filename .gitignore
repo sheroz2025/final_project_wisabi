@@ -2,4 +2,54 @@ connect.py
 my.db
 *.db
 .ipynb_checkpoints/
+__pycache__
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS / Linux / Windows junk
+.DS_Store
+Thumbs.db
+
+# Streamlit secrets (если используешь)
+.streamlit/secrets.toml
+
+# Database files
+*.db
+*.sqlite3
+my.db
+
+# Logs
+*.log
+
+# Excel temp files
+~$*
+
+# Lint / coverage / testing
+.tox/
+.nox/
+coverage.*
+.cache
+.pytest_cache/
+
+# Python build
+build/
+dist/
+*.egg-info/
 
