@@ -78,7 +78,7 @@ prometheus_client==0.21.1
 prompt_toolkit==3.0.50
 protobuf==5.29.4
 psutil==7.0.0
-psycopg2==2.9.10
+psycopg2-binary
 psycopg2-binary==2.9.10
 pure_eval==0.2.3
 pyarrow==19.0.1
@@ -89,7 +89,6 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 python-json-logger==3.2.1
 pytz==2025.1
-pywin32==308
 pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.1
