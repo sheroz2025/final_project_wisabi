@@ -12,7 +12,6 @@ select
     current_date - min(cast(t.start_time as date)) as duration
 from transactions t
 join customers c on t.cardholder_id = c.cardholder_id
-where cast(t.start_time as date) <= current_date
 group by c.cardholder_id, c.first_name, c.last_name, c.gender, c.birth_date, c.occupation, c.account_type;
 
 -- Представление с полной информацией о транзакциях

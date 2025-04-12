@@ -34,19 +34,7 @@
       "TransactionTypeID": "transaction_type_id",
       "TransactionAmount": "amount"
     }
-  },
-  "Lagos": {
-    "table_name": "transactions",
-    "columns": {
-      "TransactionID": "transaction_id",
-      "TransactionStartDateTime": "start_time",
-      "TransactionEndDateTime": "end_time",
-      "CardholderID": "cardholder_id",
-      "LocationID": "location_id",
-      "TransactionTypeID": "transaction_type_id",
-      "TransactionAmount": "amount"
-    }
-  },
+   },
   "Rivers": {
     "table_name": "transactions",
     "columns": {

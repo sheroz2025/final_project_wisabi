@@ -3,10 +3,9 @@ import pandas as pd
 import duckdb
 
 DB_FILE = 'my.db'
-
+MAX_ROWS = 1000  # Максимум строк из каждой таблицы
 
 def create_tables():
-    """создание всех таблиц из sql-скрипта"""
     try:
         with open('queries/tables.sql') as f:
             sql = f.read()
@@ -18,7 +17,7 @@ def create_tables():
 
 
 def read_csv(file_name, columns_dict, region=None):
-    df = pd.read_csv(f"source/{file_name}.csv", usecols=columns_dict.keys())
+    df = pd.read_csv(f"source/{file_name}.csv", usecols=columns_dict.keys(), nrows=MAX_ROWS)
     df = df.rename(columns=columns_dict)
 
     date_columns = ["birth_date", "date", "end_of_week"]
@@ -47,10 +46,10 @@ def load_all():
     with open('tables.json') as f:
         tables = json.load(f)
 
+    # сначала не-транзакционные таблицы
     for sheet, props in tables.items():
         table_name = props['table_name']
         columns = props['columns']
-
         if table_name != 'transactions':
             try:
                 file_name = sheet.lower().replace(" ", "_").replace("_lookup", "")
@@ -60,6 +59,7 @@ def load_all():
             except Exception as e:
                 print(f"ошибка при загрузке {sheet} → {table_name}: {e}")
 
+    # подготовка данных для фильтрации транзакций
     try:
         with duckdb.connect(DB_FILE) as con:
             valid_cardholders = con.execute("select cardholder_id from customers").fetchdf()
@@ -71,11 +71,6 @@ def load_all():
             if props['table_name'] == 'transactions':
                 file_name = f"{sheet.lower()}_transactions"
                 region = sheet.capitalize()
-
-                if region in ["Lagos", "Rivers", "Kano"]:
-                    print(f"⛔ пропущен регион: {region}")
-                    continue
-
                 try:
                     df = read_csv(file_name, props['columns'], region)
                     df = df[df['cardholder_id'].isin(valid_cardholders['cardholder_id'])]
@@ -87,7 +82,7 @@ def load_all():
                     print(f"ошибка с файлом {region}: {e}")
 
         if transactions:
-            final_df = pd.concat(transactions)
+            final_df = pd.concat(transactions).head(MAX_ROWS * 5)
             with duckdb.connect(DB_FILE) as con:
                 con.register("df", final_df)
                 con.execute("insert into transactions select * from df")
